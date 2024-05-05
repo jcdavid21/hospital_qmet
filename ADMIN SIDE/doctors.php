@@ -143,7 +143,7 @@
     }
 
 
-    button
+    .custom-btn
     {
         background: #091E3D;
         color: white;
@@ -357,7 +357,7 @@
 
         <h3>Admin</h3> <!-- fetch client name -->
 
-        <a href="./logout.php" class="log-out"><button>Log Out</button></a>
+        <a href="./logout.php" class="log-out"><button class="custom-btn">Log Out</button></a>
         <hr style="height: 1px; width: 50%;" color="black" /><br>
         <li><a href="index.php" id="status">Status</a></li><br>
         <li><a href="doctors.php" id="dochehe">Doctors</a></li><br>
@@ -374,13 +374,69 @@
     
     	<div class="cur-apts">
 
-		<div class="cur-title" style="display: flex; justify-content: center; align-items: center;">
+		<div class="cur-title" style="display: flex;">
             <h1 style="margin-right: 30px;">Doctors</h1>
-            <button style="width: 10%; margin-left: 20px;">
+            <button style="width: 10%; margin-left: 20px;" class="custom-btn">
                 <a href="./addDoctor.php" style="text-decoration: none; "><div style="color:white;">Add Doctor</div></a>
             </button>
+            <button
+            class="custom-btn"
+            style="width: max-content; margin-left: -600px;"
+            data-toggle="modal" data-target="#exampleModalAdd">
+                Modify Specialty
+            </button>
         </div>
-
+<div class="modal fade" id="exampleModalAdd" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Current Specialty</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <!-- <?php 
+            $query2 = "SELECT * FROM tbl_specialty";
+            $stmt2 = $conn->prepare($query2);
+            $stmt2->execute();
+            $result2 = $stmt2->get_result();
+            if($result2->num_rows > 0){
+                while($data2 = $result2->fetch_assoc()){
+          ?>
+            <div class="form-group" style="display:flex; align-items: center; justify-content: space-between;">
+                <input type="text" class="form-control" style="width: 200px;"
+                disabled value="<?php echo $data2["specialty_name"]; ?>">
+                <button class="btn btn-danger remove-specialty"
+                value="<?php echo $data2["specialty_id"]; ?>">Remove</button>
+            </div>
+          <?php }} ?> -->
+          <?php 
+            $query2 = "SELECT * FROM tbl_specialty";
+            $stmt2 = $conn->prepare($query2);
+            $stmt2->execute();
+            $result2 = $stmt2->get_result();
+            if($result2->num_rows > 0){
+                while($data2 = $result2->fetch_assoc()){
+          ?>
+            <div class="form-group">
+                <input type="text" class="form-control"
+                disabled value="<?php echo $data2["specialty_name"]; ?>">
+            </div>
+          <?php }} ?>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Add Specialty Name:</label>
+            <input type="text" class="form-control" id="specialty-name">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary add-specialty">Add Specialty</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 		<table>
 			<thead>
@@ -420,9 +476,9 @@
                         value="<?php echo $data["account_id"]; ?>"
                         data-toggle="modal" 
                         data-target="#exampleModal<?php echo $data["account_id"]?>"
-                        >Edit</button>
+                        class="custom-btn">Edit</button>
                         <button value="<?php echo $data["account_id"] ?>"
-                        class="remove">Remove</button>
+                        class="remove custom-btn">Remove</button>
                     </td>
 				</tr>
 
@@ -522,6 +578,7 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="../jquery/updateDocModal.js"></script>
 <script src="../jquery/removeDoctor.js"></script>
+<script src="../jquery/addSpecialty.js"></script>
 <script src="../jquery/sweetalert2.js"></script>
 </body>
 </html>
