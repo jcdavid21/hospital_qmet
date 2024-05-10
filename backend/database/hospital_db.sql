@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 05, 2024 at 05:41 AM
+-- Generation Time: May 10, 2024 at 01:54 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -39,11 +39,9 @@ CREATE TABLE `tbl_account` (
 --
 
 INSERT INTO `tbl_account` (`account_id`, `acc_email`, `acc_password`, `role_id`) VALUES
-(1, 'jcdavid@gmail.com', '123', 1),
-(2, 'johanbosit@gmail.com', '123', 2),
-(4, 'obusaken@gmail.com', '123', 1),
-(5, 'admin@gmail.com', '123', 3),
-(6, 'lugo@gmail.com', '123', 2);
+(1, 'lugo@gmail.com', '$2y$10$7gRzI3R7j0ESwpFTd97jqOd8Iub0tkHZGaq/0fl8ULJjIAABj6y7a', 3),
+(2, 'jcdavid@gmail.com', '$2y$10$r7rgz.xQ3ankbs96doKCw.5d5pgUnKRtmuIZr6WxnsrM03T6BziTa', 1),
+(5, 'golden@gmail.com', '$2y$10$mNsWJ2grYIlEGiqnGv4VeeHs18MrlqsGa/9uSD1h2yh0Y2/ZaBjEe', 2);
 
 -- --------------------------------------------------------
 
@@ -65,11 +63,11 @@ CREATE TABLE `tbl_account_details` (
 --
 
 INSERT INTO `tbl_account_details` (`account_id`, `first_name`, `last_name`, `address`, `contact`, `birth_date`) VALUES
-(1, 'Jc', 'David', 'Quezon City', '09565535401', '2002-04-21'),
-(2, 'Johan', 'Miral', 'Bayan Glori', '09512847442', '2003-04-21'),
-(4, 'ken', 'obusa', 'Quezon City', '09565535401', '2003-04-23'),
-(5, 'Admin', 'Miral', 'Bulacan', '09122096238', '2005-03-09'),
-(6, 'Christian', 'Lugo', 'Bayan Glori', '09512847442', '2005-04-25');
+(1, 'Christian', 'Lugo', 'Bayan Glori', '09565535401', '2015-04-21'),
+(2, 'Juan Carlo', 'David', 'Quezon City', '09565535401', '2016-04-21'),
+(3, 'Golden', 'Miral', 'Bayan Glori', '09565535401', '2006-04-21'),
+(4, 'Golden', 'Miral', 'Bayan Glori', '09565535401', '2016-04-21'),
+(5, 'Golden', 'Miral', 'Bayan Glori', '09565535401', '2016-04-21');
 
 -- --------------------------------------------------------
 
@@ -88,8 +86,7 @@ CREATE TABLE `tbl_account_doctor` (
 --
 
 INSERT INTO `tbl_account_doctor` (`account_id`, `profile_img`, `specialty_id`) VALUES
-(2, 'profile.jpeg', 1),
-(6, 'profile.jpeg', 2);
+(5, 'profile.jpeg', 1);
 
 -- --------------------------------------------------------
 
@@ -112,7 +109,7 @@ CREATE TABLE `tbl_appointment` (
 --
 
 INSERT INTO `tbl_appointment` (`appointment_id`, `account_id`, `specialty_id`, `doctor_acc_id`, `appointment_date`, `appointment_time`, `status_id`) VALUES
-(1, 1, 1, 2, '2024-05-23', '11:00AM', 1);
+(2, 2, 1, 5, '2024-05-11', '09:00AM', 2);
 
 -- --------------------------------------------------------
 
@@ -209,13 +206,13 @@ ALTER TABLE `tbl_specialty`
 -- AUTO_INCREMENT for table `tbl_account`
 --
 ALTER TABLE `tbl_account`
-  MODIFY `account_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `account_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tbl_appointment`
 --
 ALTER TABLE `tbl_appointment`
-  MODIFY `appointment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `appointment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tbl_role`
