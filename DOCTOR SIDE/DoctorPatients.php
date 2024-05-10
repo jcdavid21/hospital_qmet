@@ -7,7 +7,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="logo.png">
-    <title>Doctor Patients</title>
+	<link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+    <title>Doctor's Patients</title>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
@@ -17,7 +18,7 @@
 	{
 		margin: 0; /* Reset default margin */
 		padding: 0; /* Reset default padding */
-		font-family: Arial, sans-serif; /* Change the font if needed */
+		font-family: 'Open Sans'; /* Change the font if needed */
 		height: 100vh;  /*Ensure full height */
 		margin-bottom:  100px;
 	}
@@ -26,11 +27,12 @@
 	{
 		display: flex;
 		margin-top:  110px;
+		margin-left: 20px;
 	}
 
 	nav.left-nav
 	{
-		width: 250px;	/* adjustable width pa to */
+		width: 230px;	/* adjustable width pa to */
 		flex: 0 0 auto; /* fixed width ng left nav */
 	}
 
@@ -157,7 +159,7 @@
 		padding-top: 10px;
 		padding-bottom: 10px;
 		margin-bottom: 20px;
-		/*border-radius: 10px;*/
+		border-radius: 10px;
 		cursor: pointer;
 		text-decoration: none;
 		border: none;
@@ -275,6 +277,7 @@
 	{
 		display: flex;
 		flex-direction: column;
+		width: auto;
 	}
 
 	.below-inner-container
@@ -312,12 +315,19 @@
 		font-size: 30px;
 	}
 
-	table, th, td 
-	{
-		border-collapse: collapse;
-		padding: 20px 40px;
-	}
+	table {
+            width: 120%; /* Adjust the width of the table as needed */
+            margin: 0 auto; /* Center the table horizontally */
+            margin-top: 20px;
+            margin-left: 19%;
+            border-collapse: collapse;
+            padding: 15px; /* Adjust the padding as needed for spacing within cells */
+        }
 
+        th, td {
+    padding: 30px; /* Adjust the padding as needed for spacing within cells */
+    text-align: center; /* Center the content horizontally */
+		}
 	thead
 	{
 		background: #3A7DE0;
@@ -330,6 +340,21 @@
 		color: #DBCFB0; /* Change to your desired highlighted color */
 		/* Add other styles as needed */
 	}		
+
+	.cur-title {
+		margin-left: 475px;
+		margin-bottom: 30px;
+	}
+
+	.modal-footer {
+      justify-content: center; /* Center horizontally */
+    align-items: center;
+    }
+
+    .modal-header button {
+      width: 100px; /* Adjust the width as needed */
+      height: 65px;
+    }
 
 </style>
 
@@ -388,7 +413,7 @@
     	<div class="cur-apts">
 
 		<div class="cur-title">
-			<h1 style="text-align: center;">Current Appointments</h1>
+			<h1 style="text-align: center;">My Patients</h1>
 		</div>
 
 		<table>
@@ -426,7 +451,6 @@
 					<td><?php echo $data["patient_name"]; ?></td>
 					<td><?php echo $data["acc_email"]; ?></td>
 					<td><?php echo $data["contact"]; ?></td>
-					<td><?php echo $data["appointment_time"]; ?></td>
                     <td><div style="background: #091E3D; padding: 6px 16px; 
                     height: max-content; color:white; cursor: pointer;"
                     data-toggle="modal" data-target="#exampleModal<?php echo $data["appointment_id"]?>">View</div></td>
@@ -446,20 +470,11 @@
       <div class="modal-body">
         <form>
           <div class="form-group">
-            <label for="recipient-name" class="col-form-label" >Status:</label>
-            <input type="text" class="form-control" id="status-name" value="<?php echo $data["status_name"]?>" disabled >
-          </div>
-          <div class="form-group">
             <label for="recipient-name" class="col-form-label" >Patient Name:</label>
             <input type="text" class="form-control" id="patient-name" value="<?php echo $data["patient_name"]?>" disabled >
           </div>
-          <div>
-            <div><label for="recipient-name" class="col-form-label" >Date & Time:</label></div>
-            <input type="text" disabled value="<?php echo $data["appointment_date"]; ?>">
-            <input type="text" disabled value="<?php echo $data["appointment_time"]; ?>">
-          </div>
           <div class="form-group">
-            <label for="recipient-name" class="col-form-label" >Adddress:</label>
+            <label for="recipient-name" class="col-form-label" >Address:</label>
             <input type="text" class="form-control" id="address" value="<?php echo $data["address"]?>" disabled >
           </div>
           <div class="form-group">
@@ -472,10 +487,6 @@
           </div>
         </form>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary update" 
-        value="<?php echo $data["appointment_id"]; ?>" >Success</button>
-      </div>
     </div>
   </div>
 </div>
@@ -483,7 +494,6 @@
                 <?php }}else{
                 ?>
                 <tr>
-                    <td>N/A</td>
                     <td>N/A</td>
                     <td>N/A</td>
                     <td>N/A</td>

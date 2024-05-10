@@ -1,6 +1,6 @@
 *{
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: 'Open Sans';
     margin: 0;
 }
 
@@ -29,12 +29,13 @@ body{
     justify-content: start;
     gap: 12px;
     margin-bottom: 30px;
+    margin-top: 30px;
 }
 
 img{
     height: 100%;
     width: 100%;
-    object-fit: contain;
+    object-fit: fill;
 }
 
 .column .img-con{
@@ -80,9 +81,24 @@ form input, select{
     display: flex;
     justify-content: end;
     align-items: end;
+    margin-top: 15px;
 }
 
 .invalid{
     color: red;
     opacity: 0;
+}
+
+.file-input-label {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+}
+
+/* Change background color when hovered */
+.file-input-label:hover {
+    background-color: #0056b3;
 }

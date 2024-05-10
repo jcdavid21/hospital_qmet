@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="logo.png">
+    <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
     <title>Admin Panel - Doctors</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -15,7 +16,7 @@
     {
         margin: 0; /* Reset default margin */
         padding: 0; /* Reset default padding */
-        font-family: Arial, sans-serif; /* Change the font if needed */
+        font-family: 'Open sans';
         height: 100vh;  /*Ensure full height */
         margin-bottom:  100px;
     }
@@ -28,8 +29,9 @@
 
     nav.left-nav
     {
-        width: 250px;	/* adjustable width pa to */
+        width: 220px;	/* adjustable width pa to */
         flex: 0 0 auto; /* fixed width ng left nav */
+        margin-top: -16px;
     }
 
     .content 
@@ -37,7 +39,6 @@
         flex: 1;
         padding: 20px;
         margin-left: 10%;
-        margin-top: 50px;
     }
 
 
@@ -50,7 +51,7 @@
     {
         background: #091E3D;
         color: white;
-        padding: 10px;
+        padding: 1px;
         box-sizing: border-box;
         border: solid black 1px;
         display: flex;
@@ -146,19 +147,20 @@
     .custom-btn
     {
         background: #091E3D;
-        color: white;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-        width: 70%;
-        display: grid;
-        margin: auto;
-        padding-top: 10px;
-        padding-bottom: 10px;
-        margin-bottom: 20px;
-        /*border-radius: 10px;*/
-        cursor: pointer;
-        text-decoration: none;
-        border: none;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+           	width: 90%;
+           	display: grid;
+           	margin: auto;
+           	padding-top: 10px;
+           	padding-bottom: 10px;
+           	margin-bottom: 20px;
+            border-radius: 10px;
+			cursor: pointer;
+  			text-decoration: none;
+  			border: none;
+
     }
 
     button:hover 
@@ -198,7 +200,7 @@
 
     .inner-container
     {
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: 'Open sans';
         box-sizing: border-box;
         border: none;
         padding-top: 30px;
@@ -317,6 +319,12 @@
         padding: 20px 40px;
     }
 
+    th {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
     thead
     {
         background: #3A7DE0;
@@ -329,6 +337,10 @@
         color: #DBCFB0; /* Change to your desired highlighted color */
         /* Add other styles as needed */
     }		
+
+    button.custom-btn {
+        width:75px;
+    }
 
 </style>
 
@@ -363,8 +375,6 @@
         <li><a href="doctors.php" id="dochehe">Doctors</a></li><br>
         <li><a href="patients.php" id="pathehe">Patients</a></li><br>
         <li><a href="appointments.php" id="apphehe">Appointments</a></li><br>
-        <li><a href="schedules.php" id="sched">Schedule</a></li><br>
-        
     </ul>
 </nav>
 

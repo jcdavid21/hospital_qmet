@@ -1,0 +1,217 @@
+body 
+    	{
+            margin: 0; /* Reset default margin */
+            padding: 0; /* Reset default padding */
+            font-family: 'Open Sans'; /* Change the font if needed */
+            background: #EFF2EF;
+        }
+
+        .container 
+        {
+            display: flex;
+            height: 100vh;  /*Ensure full height */
+            width: 90%;
+        }
+
+        .content 
+        {
+            align-items: center; /* Center horizontally */
+            justify-content: center; /* Center vertically */
+            margin: 20px;
+        }
+
+
+        nav.left-nav
+        {
+        	width: 200px;	/* adjustable width pa to */
+        	flex: 0 0 auto; /* fixed width ng left nav */
+        }
+
+        header 
+        {
+            background: #091E3D;
+            color: white;
+            padding: 1px;
+            box-sizing: border-box;
+            border: solid black 1px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+
+        header img 
+        {
+            height: 50px; /* Adjust as needed */
+            width: auto; /* Maintain aspect ratio */
+        }
+
+        .header-title h1
+        {
+        	flex-grow: 1;
+        	text-align: center;
+        }
+
+        ul
+        {
+            background: #3A7DE0;
+            color: white;
+            padding: 10px;
+            left: 0; 
+            height: 100vh;
+            background: #3A7DE0;
+            color: white;
+            justify-content: center; 
+            text-align: center;
+        }
+
+        .topleft
+        {
+        	display: flex;
+    		align-items: center;
+        }
+
+        .topleft img
+        {
+        	margin: 20px;
+        }
+
+        .topleft:hover img
+        {
+        	transform: scale(1.1);
+        	/*filter: grayscale(100%) brightness(50%);*/
+        }
+
+        .topright
+        {
+        	margin: 20px;
+        }
+
+        nav ul 
+		{
+    		list-style-type: none; /* Remove default list styling */
+    		padding: 0; /* Remove default padding */
+		}
+
+		nav ul li 
+		{
+    		display: block; /* Display list items horizontally */
+    		margin-right: 10px; /* Adjust spacing between list items */
+		}	
+
+		nav ul li a:hover 
+		{
+    		color: white; /* hover sa kulay ng font */
+		}
+
+        .left-nav ul
+        {
+        
+        	list-style-type: none;
+        	margin: 0;
+        	padding: 0;
+
+        }
+
+        .left-nav a
+        {
+        	 text-decoration: none;     	
+        }
+
+		button
+		{
+			background: #091E3D;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+           	width: 70%;
+           	display: grid;
+           	margin: auto;
+           	padding-top: 10px;
+           	padding-bottom: 10px;
+           	margin-bottom: 20px;
+            border-radius: 10px;
+			cursor: pointer;
+  			text-decoration: none;
+  			border: none;
+		}
+
+		button:hover 
+		{
+            background-color: #DBCFB0;
+        }
+
+		li a 
+		{
+			color: black;
+		}
+
+		.log-out
+		{
+			color: white;
+		}
+
+
+        nav ul li a.active 
+        {
+            color: #DBCFB0; /* Change to your desired highlighted color */
+            /* Add other styles as needed */
+        }   
+
+        h2
+        {
+            font-family: 'Open Sans';
+        }
+
+
+			/* Define the style for the active button */
+		nav ul li a.active 
+		{
+    		color: #DBCFB0; /* Change to your desired highlighted color */
+    		/* Add other styles as needed */
+		}	
+
+        .inner-content {
+            display: flex;
+            flex-direction: column; /* Change the direction to column */
+            justify-content: center;
+            align-items: center;
+            margin-left: 350px;
+            margin-bottom: 100px;
+            padding: 30px; /* Adjust as needed */
+            box-sizing: border-box;
+            border: none;
+            background: #133C7A;
+        
+        }
+        
+        .title-box {
+            text-align: center;
+            margin-top: 10px; /* Adjust as needed */
+            font-family: 'Open Sans';
+        }
+        
+        .table-container {
+            margin-top: -10px; /* Adjust as needed */
+        }
+
+        table {
+            border-collapse: separate; /* Ensure cells have independent borders */
+            border-spacing: 20px;
+        }
+        
+        /* Optional: Add border to separate cells for better visualization */
+        td, th {
+            padding: 30px; /* Add padding for better spacing within cells */
+        }
+
+        .table h1 {
+            justify-content: center;
+            align-items: center;
+            margin-left: 50px;
+        }
+        
+        
+        
+
+	

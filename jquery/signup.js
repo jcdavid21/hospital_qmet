@@ -10,7 +10,7 @@ $(document).ready(() => {
         const email = $("#email").val();
         const password = $("#password").val();
         const confirmPass = $("#confirmPass").val();
-        console.log(first_name + last_name + address + contact + birth_date + email + password + confirmPass);
+       
 
         // Function to validate password complexity
         function validatePassword(password) {
@@ -22,19 +22,23 @@ $(document).ready(() => {
         function validateBirthDate(birthDate) {
             const today = new Date();
             const birthDateObj = new Date(birthDate);
-            const minDate = new Date();
-            minDate.setFullYear(minDate.getFullYear() - 8); // At least 8 years gap
-
-            return birthDateObj < today && birthDateObj >= minDate;
+            const eightYearsAgo = new Date();
+            eightYearsAgo.setFullYear(today.getFullYear() - 8);
+        
+            return birthDateObj <= eightYearsAgo;
         }
+        
 
-        if (first_name && last_name && address && contact && birth_date && email && password && confirmPass) {
+        if (first_name && last_name && address && birth_date && email && password && confirmPass) {
             if (password === confirmPass) {
                 if (!validatePassword(password)) {
                     invalid.innerText = "Password must contain at least 1 uppercase letter, 1 special character, and be at least 8 characters long.";
                     invalid.style.opacity = "1";
                 } else if (!validateBirthDate(birth_date)) {
                     invalid.innerText = "Birth date must be before today and at least 8 years ago.";
+                    invalid.style.opacity = "1";
+                } else if (contact.length !== 11) {
+                    invalid.innerText = "Contact number must be exactly 11 digits long.";
                     invalid.style.opacity = "1";
                 } else {
                     $.ajax({

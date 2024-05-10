@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./addDoctor.css">
+    <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
     <link rel="icon" type="image/x-icon" href="logo.png">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Add Doctor</title>
@@ -18,7 +19,8 @@
                 <div class="img-con">
                     <img src="./doctor.png" alt="">
                 </div>
-                <input type="file" id="profile">
+                <input type="file" id="profile" class="file-input">
+
             </div>
             <form>
                 <div class="con-details">

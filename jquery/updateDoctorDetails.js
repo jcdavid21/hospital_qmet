@@ -15,8 +15,34 @@ $(document).ready(() => {
         formData.append('password', $("#password").val());
         formData.append('confirmPass', $("#confirmPass").val());
 
+        // Function to validate contact number
+        function validateContact(contact) {
+            return contact.length === 11;
+        }
+
+        // Function to validate birth date
+        function validateBirthDate(birthDate) {
+            const today = new Date();
+            const birthDateObj = new Date(birthDate);
+            const eightYearsAgo = new Date();
+            eightYearsAgo.setFullYear(today.getFullYear() - 8);
+        
+            return birthDateObj <= eightYearsAgo;
+        }
+
         if (formData.get('first_name') && formData.get('last_name') && formData.get('address') && formData.get('contact') && formData.get('birth_date') && formData.get('email') && formData.get('password') && formData.get('confirmPass') && formData.get('profile')) {
             if (formData.get('password') === formData.get('confirmPass')) {
+                if (!validateContact(formData.get('contact'))) {
+                    invalid.innerText = "Contact number must be exactly 11 digits long.";
+                    invalid.style.opacity = "1";
+                    return;
+                }
+                if (!validateBirthDate(formData.get('birth_date'))) {
+                    invalid.innerText = "Birth date must be before today and at least 8 years ago.";
+                    invalid.style.opacity = "1";
+                    return;
+                }
+
                 $.ajax({
                     url: "../backend/doctor/updateDetails.php",
                     method: "post",
@@ -39,7 +65,7 @@ $(document).ready(() => {
                     }
                 })
             } else {
-                invalid.innerText = "Invalid Password";
+                invalid.innerText = "Passwords do not match.";
                 invalid.style.opacity = "1";
             }
         } else {

@@ -188,7 +188,7 @@
 
    <div class="container">
         <div class="inner-container">
-          <h1>Add a Doctor</h1> 
+          <h1>Edit Doctor Details</h1> 
           <img src="doctor.png" id = "profile-pic">
           <label for="input-file">Add Image</label>
           <input id = "input-file" type="file" accept="image/jpeg, image/png, image/jpg">

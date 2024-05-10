@@ -26,10 +26,10 @@ $(document).ready(() => {
         function validateBirthDate(birthDate) {
             const today = new Date();
             const birthDateObj = new Date(birthDate);
-            const minDate = new Date();
-            minDate.setFullYear(minDate.getFullYear() - 8); // At least 8 years gap
-
-            return birthDateObj < today && birthDateObj >= minDate;
+            const eightYearsAgo = new Date();
+            eightYearsAgo.setFullYear(today.getFullYear() - 8);
+        
+            return birthDateObj <= eightYearsAgo;
         }
 
         if (formData.get('first_name') && formData.get('last_name') && formData.get('address') && formData.get('contact') && formData.get('birth_date') && formData.get('email') && formData.get('password') && formData.get('confirmPass') && formData.get('specialty') && formData.get('profile')) {
@@ -39,6 +39,9 @@ $(document).ready(() => {
                     invalid.style.opacity = "1";
                 } else if (!validateBirthDate(formData.get('birth_date'))) {
                     invalid.innerText = "Birth date must be before today and at least 8 years ago.";
+                    invalid.style.opacity = "1";
+                } else if (formData.get('contact').length !== 11) {
+                    invalid.innerText = "Contact number must be exactly 11 digits long.";
                     invalid.style.opacity = "1";
                 } else {
                     $.ajax({

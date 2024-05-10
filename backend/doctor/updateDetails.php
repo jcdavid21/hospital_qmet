@@ -16,6 +16,7 @@ if (
     $email = $_POST["email"];
     $password = $_POST["password"];
     $account_id = $_SESSION["doctor_id"];
+    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
     // Handle file upload
     $profile_tmp_name = $_FILES["profile"]["tmp_name"];
@@ -44,7 +45,7 @@ if (
             $query3 = "UPDATE tbl_account SET acc_email = ?, acc_password  = ?
             WHERE account_id = ?";
             $stmt3 = $conn->prepare($query3);
-            $stmt3->bind_param("ssi", $email, $password, $account_id);
+            $stmt3->bind_param("ssi", $email, $hashed_password, $account_id);
             $stmt3->execute();
 
             $query4 = "UPDATE tbl_account_doctor SET profile_img = ? WHERE account_id = ?";

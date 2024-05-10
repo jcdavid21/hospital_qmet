@@ -12,16 +12,18 @@ $(document).ready(() => {
         function validateBirthDate(birthDate) {
             const today = new Date();
             const birthDateObj = new Date(birthDate);
-            const minDate = new Date();
-            minDate.setFullYear(minDate.getFullYear() - 8); // At least 8 years gap
-
-            return birthDateObj < today && birthDateObj >= minDate;
+            const eightYearsAgo = new Date();
+            eightYearsAgo.setFullYear(today.getFullYear() - 8);
+        
+            return birthDateObj <= eightYearsAgo;
         }
 
         if (first_name && last_name && address && contact && birth_date && email) {
             if (!validateBirthDate(birth_date)) {
                 alert("Birth date must be before today and at least 8 years ago.");
-            } else {
+            }else if (contact.length !== 11) {
+                alert('Contact number must be exactly 11 digits long.');
+            }  else {
                 $.ajax({
                     url: "../backend/patient/updateDetails.php",
                     method: "post",

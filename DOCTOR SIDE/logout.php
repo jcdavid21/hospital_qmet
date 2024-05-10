@@ -5,5 +5,5 @@
 
 <script>
     localStorage.removeItem("doctorDetails");
-    window.location.href =  "../CLIENT SIDE/landing_page.php";
+    window.location.href =  "../index.php";
 </script>

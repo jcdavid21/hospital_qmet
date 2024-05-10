@@ -8,222 +8,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="logo.png">
-    <title>Patient L_Page</title>
-
-    <style type="text/css">
-
-    	body 
-    	{
-            margin: 0; /* Reset default margin */
-            padding: 0; /* Reset default padding */
-            font-family: Arial, sans-serif; /* Change the font if needed */
-        }
-
-        .container 
-        {
-        	position: fixed;
-            display: flex;
-            height: 100vh;  /*Ensure full height */
-        }
-
-        nav.left-nav
-        {
-        	width: 250px;	/* adjustable width pa to */
-        	flex: 0 0 auto; /* fixed width ng left nav */
-        }
-
-        .content 
-        {
-        	flex: 1;
-        	padding: 20px;
-        	margin-left: 300px;
-        }
-
-        header 
-        {
-            background: #091E3D;
-            color: white;
-            padding: 10px;
-            box-sizing: border-box;
-            border: solid black 1px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-        }
-
-        header img 
-        {
-            height: 50px; /* Adjust as needed */
-            width: auto; /* Maintain aspect ratio */
-        }
-
-        .header-title h1
-        {
-        	flex-grow: 1;
-        	text-align: center;
-        }
-        nav 
-        {
-            background: #3A7DE0;
-            color: white;
-            padding: 10px;
-            position: fixed;
-            left: 0; 
-            height: 100vh;
-            background: #3A7DE0;
-            color: white;
-            padding: 10px;
-            display: flex; /* Use flexbox */
-            justify-content: center; 
-            text-align: center;
-        }
-
-        button
-        {
-            background: #091E3D;
-            color: white;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            width: 70%;
-            display: grid;
-            margin: auto;
-            padding-top: 10px;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-            /*border-radius: 10px;*/
-            cursor: pointer;
-            text-decoration: none;
-            border: none;
-        }
-
-         hr
-        {
-            width: 70%;
-        }
-
-        .topleft
-        {
-        	display: flex;
-    		align-items: center;
-        }
-
-        .topleft img
-        {
-        	margin: 20px;
-        }
-
-        .topleft:hover img
-        {
-        	transform: scale(1.1);
-        	/*filter: grayscale(100%) brightness(50%);*/
-        }
-
-        .topright
-        {
-        	margin: 20px;
-        }
-
-        nav ul 
-		{
-    		list-style-type: none; /* Remove default list styling */
-    		padding: 0; /* Remove default padding */
-		}
-
-		nav ul li 
-		{
-    		display: block; /* Display list items horizontally */
-    		margin-right: 10px; /* Adjust spacing between list items */
-		}	
-
-		nav ul li a:hover 
-		{
-    		color: white; /* hover sa kulay ng font */
-		}
-
-        .left-nav ul
-        {
-        
-        	list-style-type: none;
-        	margin: 0;
-        	padding: 0;
-
-        }
-
-        .left-nav a
-        {
-        	 text-decoration: none;     	
-        }
-
-		.container
-		{
-			display: flex;
-			height: 100vh;
-		}
-
-
-
-		button:hover 
-		{
-            background-color: #DBCFB0;
-        }
-
-		li a 
-		{
-			color: black;
-		}
-
-		.log-out
-		{
-			color: white;
-		}
-
-		::-webkit-scrollbar {
-            width: 5px;
-            background-color: transparent;
-        }
-
-        /* Track */
-        ::-webkit-scrollbar-track {
-            background-color: rgba(0, 0, 0, 0);
-        }
-
-        /* Handle */
-        ::-webkit-scrollbar-thumb {
-            background-color: #504B3A;
-        }
-
-        /* Handle on hover */
-        ::-webkit-scrollbar-thumb:hover {
-            background: #555;
-        }
-
-        .inner-container 
-        {
-        
-            justify-content: center;
-            align-items: center;
-            max-width: fit-content;
-            margin-bottom: 100px;
-            padding-top: 50px; /* Adjust as needed */
-            padding-bottom: 50px;
-            padding-left: 150px;
-            padding-right: 150px;
-            box-sizing: border-box;
-            border: none;
-            background: #133C7A;
-            border-radius: 15px;
-            color: white;
-        }
-
-        nav ul li a.active 
-        {
-            color: #DBCFB0; /* Change to your desired highlighted color */
-            /* Add other styles as needed */
-        }   
-
-    </style>
-
+    <link rel="stylesheet" type="text/css" href="../css/patient/index.css">
+	<link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+    <title>Patient Dashboard</title>
 </head>
 <body>
 
@@ -261,14 +48,14 @@
 
 <div class="content">
     <div class="inner-container">
-	<h3 style="font-size: 40px;">Good Day!</h3>
+	<h3 style="font-size: 30px;">Good Day!</h3>
 
 	<!-- PATIENT NAME NA NAKA PHP KASI FEFETCH AFTER MAG LOG IN OR REGISTER -->
 	<!-- eto sample ->  <h2><?php echo $row1['patient_name']; ?></h2> -->
 
 	<h2 style="font-size: 50px;" class="patientName">Patient Name</h2>
 
-	<p  style="font-size: 20px;">Want to book an appointment? click on “Schedule Appointment” on the left. To<br> view your current appointments, go to “ View Appointments. If you wish to update<br> the details of your account, click on “Account”.</p>
+	<p  style="font-size: 20px;">Want to book an appointment? click on “Schedule Appointment” on the left. To view your current appointments, go <br>to “ View Appointments. If you wish to update the details of your account, click on “Account”.</p>
 	</div>
 </div>
 </div>

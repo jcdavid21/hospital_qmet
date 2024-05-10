@@ -28,8 +28,9 @@
 
     nav.left-nav
     {
-        width: 250px;	/* adjustable width pa to */
+        width: 220px;	/* adjustable width pa to */
         flex: 0 0 auto; /* fixed width ng left nav */
+        margin-top: 3px;
     }
 
     .content 
@@ -155,7 +156,7 @@
         padding-top: 10px;
         padding-bottom: 10px;
         margin-bottom: 20px;
-        /*border-radius: 10px;*/
+        border-radius: 10px;
         cursor: pointer;
         text-decoration: none;
         border: none;
@@ -330,6 +331,24 @@
         /* Add other styles as needed */
     }		
 
+    table {
+        width: 120%;
+        margin-top: 20px;;
+    }
+
+    .content h1 {
+        margin-left: 230px;
+    }
+
+    .modal-footer {
+      justify-content: center; /* Center horizontally */
+    align-items: center;
+    }
+
+    .modal-header button {
+      width: 100px; /* Adjust the width as needed */
+      height: 65px;
+    }
 </style>
 
 </head>
@@ -362,9 +381,7 @@
         <li><a href="index.php" id="status">Status</a></li><br>
         <li><a href="doctors.php" id="dochehe">Doctors</a></li><br>
         <li><a href="patients.php" id="pathehe">Patients</a></li><br>
-        <li><a href="appointments.php" id="apphehe">Appointments</a></li><br>
-        <li><a href="schedules.php" id="sched">Schedule</a></li><br>
-        
+        <li><a href="appointments.php" id="apphehe">Appointments</a></li><br>     
     </ul>
 </nav>
 
@@ -375,10 +392,7 @@
     	<div class="cur-apts">
 
 		<div class="cur-title" style="display: flex; justify-content: center; align-items: center;">
-            <h1 style="margin-right: 30px;">Doctors</h1>
-            <button style="width: 10%; margin-left: 20px;">
-                <a href="./addDoctor.php" style="text-decoration: none; "><div style="color:white;">Add Doctor</div></a>
-            </button>
+            <h1 style="margin-right: 30px;">Appointments</h1>
         </div>
 
 

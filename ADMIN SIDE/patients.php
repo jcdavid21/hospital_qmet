@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="logo.png">
+    <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
     <title>Admin Panel - Patients</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -15,7 +16,7 @@
     {
         margin: 0; /* Reset default margin */
         padding: 0; /* Reset default padding */
-        font-family: Arial, sans-serif; /* Change the font if needed */
+        font-family: 'Open Sans'; /* Change the font if needed */
         height: 100vh;  /*Ensure full height */
         margin-bottom:  100px;
     }
@@ -28,15 +29,16 @@
 
     nav.left-nav
     {
-        width: 250px;	/* adjustable width pa to */
+        width: 220px;	/* adjustable width pa to */
         flex: 0 0 auto; /* fixed width ng left nav */
+        margin-top: 3px;
     }
 
     .content 
     {
         flex: 1;
         padding: 20px;
-        margin-left: 10%;
+        margin-left: 5%;
         margin-top: 50px;
     }
 
@@ -155,7 +157,7 @@
         padding-top: 10px;
         padding-bottom: 10px;
         margin-bottom: 20px;
-        /*border-radius: 10px;*/
+        border-radius: 10px;
         cursor: pointer;
         text-decoration: none;
         border: none;
@@ -328,8 +330,26 @@
     {
         color: #DBCFB0; /* Change to your desired highlighted color */
         /* Add other styles as needed */
-    }		
+    }	
+    
+    table {
+        width: 120%;
+        margin-top: 20px;;
+    }
 
+    .content h1 {
+        margin-left: 230px;
+    }
+
+    .modal-footer {
+      justify-content: center; /* Center horizontally */
+    align-items: center;
+    }
+
+    .modal-header button {
+      width: 100px; /* Adjust the width as needed */
+      height: 65px;
+    }
 </style>
 
 
@@ -364,7 +384,6 @@
         <li><a href="doctors.php" id="dochehe">Doctors</a></li><br>
         <li><a href="patients.php" id="pathehe">Patients</a></li><br>
         <li><a href="appointments.php" id="apphehe">Appointments</a></li><br>
-        <li><a href="schedules.php" id="sched">Schedule</a></li><br>
         
     </ul>
 </nav>
@@ -376,10 +395,7 @@
     	<div class="cur-apts">
 
 		<div class="cur-title" style="display: flex; justify-content: center; align-items: center;">
-            <h1 style="margin-right: 30px;">Doctors</h1>
-            <button style="width: 10%; margin-left: 20px;">
-                <a href="./addDoctor.php" style="text-decoration: none; "><div style="color:white;">Add Doctor</div></a>
-            </button>
+            <h1 style="margin-right: 30px;">Patients</h1>
         </div>
 
 

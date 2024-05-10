@@ -7,6 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="logo.png">
+    <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
     <title>Doctor Sessions</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -17,7 +18,7 @@
     	{
             margin: 0; /* Reset default margin */
             padding: 0; /* Reset default padding */
-            font-family: Arial, sans-serif; /* Change the font if needed */
+            font-family: 'Open Sans'; /* Change the font if needed */
             height: 100vh;  /*Ensure full height */
             margin-bottom:  100px;
         }
@@ -30,17 +31,20 @@
 
         nav.left-nav
         {
-        	width: 250px;	/* adjustable width pa to */
+        	width: 220px;	/* adjustable width pa to */
         	flex: 0 0 auto; /* fixed width ng left nav */
+          margin-top: 2px;
         }
 
-        .content 
-        {
-        	flex: 1;
-        	padding: 20px;
-            margin-left: 20%;
-            margin-top: 50px;
-        }
+        .content {
+    flex: 1;
+    padding: 20px;
+    margin: 50px auto 0; /* Center the content horizontally and add top margin */
+}
+
+  .content h1{
+    margin-left: 50%;;
+  }
 
        
         hr 
@@ -157,7 +161,7 @@
             padding-top: 10px;
             padding-bottom: 10px;
             margin-bottom: 20px;
-            /*border-radius: 10px;*/
+            border-radius: 10px;
             cursor: pointer;
             text-decoration: none;
             border: none;
@@ -312,12 +316,19 @@
 			font-size: 30px;
 		}
 
-		table, th, td 
-		{
-			border-collapse: collapse;
-			
-			padding: 20px 40px;
-		}
+		table {
+            width: 90%; /* Adjust the width of the table as needed */
+            margin: 0 auto; /* Center the table horizontally */
+            margin-top: 20px;
+            margin-left: 19%;
+            border-collapse: collapse;
+            padding: 15px; /* Adjust the padding as needed for spacing within cells */
+        }
+
+        th, td {
+    padding: 30px; /* Adjust the padding as needed for spacing within cells */
+    text-align: center; /* Center the content horizontally */
+}
 
 		thead
 		{
@@ -332,6 +343,15 @@
     		/* Add other styles as needed */
 		}		
 
+    .modal-footer {
+      justify-content: center; /* Center horizontally */
+    align-items: center;
+    }
+
+    .modal-header button {
+      width: 100px; /* Adjust the width as needed */
+      height: 65px;
+    }
     </style>
 
 </head>
@@ -458,7 +478,7 @@
             <input type="text" disabled value="<?php echo $data["appointment_time"]; ?>">
           </div>
           <div class="form-group">
-            <label for="recipient-name" class="col-form-label" >Adddress:</label>
+            <label for="recipient-name" class="col-form-label" >Address:</label>
             <input type="text" class="form-control" id="address" value="<?php echo $data["address"]?>" disabled >
           </div>
           <div class="form-group">
@@ -569,7 +589,7 @@
             <input type="text" disabled value="<?php echo $data["appointment_time"]; ?>">
           </div>
           <div class="form-group">
-            <label for="recipient-name" class="col-form-label" >Adddress:</label>
+            <label for="recipient-name" class="col-form-label" >Address:</label>
             <input type="text" class="form-control" id="address" value="<?php echo $data["address"]?>" disabled >
           </div>
           <div class="form-group">

@@ -17,6 +17,8 @@ if (
     $password = $_POST["password"];
     $specialty = $_POST["specialty"];
     $role_id = 2;
+    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
 
     // Handle file upload
     $profile_tmp_name = $_FILES["profile"]["tmp_name"];
@@ -36,7 +38,7 @@ if (
         } else {
             $query2 = "INSERT INTO tbl_account (acc_email, acc_password, role_id) VALUES (?, ?, ?)";
             $stmt2 = $conn->prepare($query2);
-            $stmt2->bind_param("ssi", $email, $password, $role_id);
+            $stmt2->bind_param("ssi", $email, $hashed_password, $role_id);
             $stmt2->execute();
 
             $account_id = $stmt2->insert_id;

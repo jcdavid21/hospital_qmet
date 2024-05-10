@@ -7,286 +7,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="logo.png">
+    <link rel="stylesheet" type="text/css" href="../css/doctor/index.css">
+	<link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
     <title>Doctor Dashboard</title>
-
-    <style type="text/css">
-
-    	body 
-    	{
-            margin: 0; /* Reset default margin */
-            padding: 0; /* Reset default padding */
-            font-family: Arial, sans-serif; /* Change the font if needed */
-        }
-
-        .container 
-        {
-        	position: fixed;
-            display: flex;
-            height: 100vh;  /*Ensure full height */
-        }
-
-        nav.left-nav
-        {
-        	width: 250px;	/* adjustable width pa to */
-        	flex: 0 0 auto; /* fixed width ng left nav */
-        }
-
-        .content 
-        {
-        	flex: 1;
-        	padding: 20px;
-        	margin-left: 20vw;
-        }
-
-        header 
-        {
-            background: #091E3D;
-            color: white;
-            padding: 10px;
-            box-sizing: border-box;
-            border: solid black 1px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-        }
-
-        header img 
-        {
-            height: 50px; /* Adjust as needed */
-            width: auto; /* Maintain aspect ratio */
-        }
-
-        .header-title h1
-        {
-        	flex-grow: 1;
-        	text-align: center;
-        }
-
-        nav 
-        {
-            background: #3A7DE0;
-            color: white;
-            padding: 10px;
-            position: fixed;
-        	left: 0; 
-        	height: 100vh;
-        	background: #3A7DE0;
-    		color: white;
-    		padding: 10px;
-    		display: flex; /* Use flexbox */
-    		justify-content: center; 
-    		text-align: center;
-        }
-
-        .topleft
-        {
-        	display: flex;
-    		align-items: center;
-        }
-
-        .topleft img
-        {
-        	margin: 20px;
-        }
-
-        .topleft:hover img
-        {
-        	transform: scale(1.1);
-        	/*filter: grayscale(100%) brightness(50%);*/
-        }
-
-        .topright
-        {
-        	margin: 20px;
-        }
-
-        nav ul 
-		{
-    		list-style-type: none; /* Remove default list styling */
-    		padding: 0; /* Remove default padding */
-		}
-
-		nav ul li 
-		{
-    		display: block; /* Display list items horizontally */
-    		margin-right: 10px; /* Adjust spacing between list items */
-		}	
-
-		nav ul li a:hover 
-		{
-    		color: white; /* hover sa kulay ng font */
-		}
-
-        .left-nav ul
-        {
-        
-        	list-style-type: none;
-        	margin: 0;
-        	padding: 0;
-
-        }
-
-        .left-nav a
-        {
-        	 text-decoration: none;     	
-        }
-
-		.container
-		{
-			display: flex;
-			height: 100vh;
-		}
-
-
-		button
-		{
-			background: #091E3D;
-            color: white;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-           	width: 70%;
-           	display: grid;
-           	margin: auto;
-           	padding-top: 10px;
-           	padding-bottom: 10px;
-           	margin-bottom: 20px;
-            /*border-radius: 10px;*/
-			cursor: pointer;
-  			text-decoration: none;
-  			border: none;
-		}
-
-		button:hover 
-		{
-            background-color: #DBCFB0;
-        }
-
-		li a 
-		{
-			color: black;
-		}
-
-		.log-out
-		{
-			color: white;
-		}
-
-		::-webkit-scrollbar {
-            width: 5px;
-            background-color: transparent;
-        }
-
-        /* Track */
-        ::-webkit-scrollbar-track {
-            background-color: rgba(0, 0, 0, 0);
-        }
-
-        /* Handle */
-        ::-webkit-scrollbar-thumb {
-            background-color: #504B3A;
-        }
-
-        /* Handle on hover */
-        ::-webkit-scrollbar-thumb:hover {
-            background: #555;
-        }
-
-        .inner-container 
-        {
-        
-            justify-content: center;
-            align-items: center;
-            max-width: fit-content;
-            padding-top: 20px; /* Adjust as needed */
-            padding-bottom: 20px;
-            padding-left: 240px;
-            padding-right: 240px;
-            box-sizing: border-box;
-            border: none;
-            background: #133C7A;
-            border-radius: 15px;
-            color: white;
-        }
-
-        .inner-child
-        {
-
-            display: grid;
-            grid-template-columns: repeat(2, 1fr); /* Two columns */
-            grid-gap: 5px; 
-            margin-bottom: 30px;
-
-        }
-
-        .demon-1,
-    	.demon-2 
-    	{
-        	grid-column: span 1; /* Occupy one column */
-        	text-align: center;
-    	}
-
-    	.angel-1,
-    	.angel-2 {
-        	grid-column: span 1; /* Occupy two columns */
-        	text-align: center;
-    	}
-
-    
-
-        .btn-sched
-        {
-        	padding: 20px;
-        	margin: 20px;
-        	width: 30%;
-        	margin: auto;
-        	margin-bottom: 20px;
-
-        }
-
-        #btn-sched1
-        {
-        	text-decoration: none;
-        	color: white;
-        	font-size: 15px;
-
-        }
-
-        select
-        {
-        	font-size: 20px;
-        }
-
-        nav ul li a.active 
-        {
-            color: #DBCFB0; /* Change to your desired highlighted color */
-            /* Add other styles as needed */
-        }   
-
-        .box-container
-        {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .below-inner-container
-        {
-            box-sizing: border-box;
-            /*border: solid black 1px;*/
-            padding-bottom: 20px;
-            padding-left: 30px;
-            padding-right: 30px;
-            margin: 10px;
-            border-radius: 25px;
-        }
-
-        h2
-        {
-            font-family: monospace;
-        }
-
-    </style>
-
 </head>
 <body>
 
@@ -338,13 +61,13 @@
 <div class="content">
     <div class="box-container">
     <div class="inner-container">
-        <h4 style="font-size: 45px;">Welcome!</h4>
+        <h4 style="font-size: 30px;">Welcome!</h4>
 
-        <h1 style="font-size: 50px;" class="doctorName">Doctor Name</h1>
+        <h1 style="font-size: 45px;" class="doctorName">Doctor Name</h1>
 
         <p style="font-size: 20px;">
-        Dashboard provides your current status. To view your sessions, go to “My<br>
-        Sessions”. Access your patients details in “My Patients”. Edit your profile details in<br>
+        Dashboard provides your current status. To view your sessions, go to “My
+        Sessions”. Access your patients details in “My Patients”. Edit your profile details in
         “Account”.
         </p>			
 	</div>
@@ -384,7 +107,7 @@
             $result = $stmt->get_result();
             $data = $result->fetch_assoc();
         ?>
-        <h2>Patients <?php echo $data["patient_count"];?>
+        <h2>Patients: <?php echo $data["patient_count"];?>
         </h2>
     </div>
     </div>
