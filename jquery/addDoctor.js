@@ -55,8 +55,8 @@ $(document).ready(() => {
                                 invalid.innerText = "Email address already exists.";
                                 invalid.style.opacity = "1";
                             } else if (response === "error_uploading") {
-                                alert("Error uploading");
-                            } else {
+                                alert("Error uploading, please upload picture");
+                            }else if (response === 'success'){
                                 alert("Registered Successfully");
                                 window.location.href = "./index.php";
                             }

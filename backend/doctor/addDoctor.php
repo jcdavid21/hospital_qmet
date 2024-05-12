@@ -52,9 +52,14 @@ if (
             $stmt4 = $conn->prepare($query4);
             $stmt4->bind_param("ssi", $account_id, $profile_name, $specialty);
             $stmt4->execute();
+            echo "success";
+            exit();
         }
+        
     } else {
         echo "error_uploading";
     }
+}else{
+    echo "error_uploading";
 }
 ?>

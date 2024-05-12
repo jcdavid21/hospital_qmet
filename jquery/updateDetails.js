@@ -36,10 +36,8 @@ $(document).ready(() => {
                         email,
                     },
                     success: function(response) {
-                        if (response === "success") {
-                            alert("Updated Successfully");
-                            window.location.href = "./logout.php";
-                        }
+                        localStorage.setItem("patientDetails", response);
+                        window.location.href = "./patient_lading_page.php";
                     },
                     error: function() {
                         console.log("Connection Error");
