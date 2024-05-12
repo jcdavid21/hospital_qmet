@@ -29,7 +29,7 @@ $(document).ready(() => {
                     },
                     success: function(response) {
                         if (response === "existed") {
-                            invalid.innerText = "You still have pending appointments in this category.";
+                            invalid.innerText = "This schedule already taken";
                             invalid.style.opacity = "1";
                         } else {
                             alert("Appointment Schedule Added!");

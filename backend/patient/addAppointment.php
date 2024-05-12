@@ -12,9 +12,9 @@
         $apt_time = $_POST["apt_time"];
 
         $query = "SELECT * FROM tbl_appointment 
-        WHERE account_id = ? AND specialty_id = ? AND status_id = 1";
+        WHERE doctor_acc_id = ? AND appointment_date = ? AND appointment_time = ? AND status_id = 1";
         $stmt = $conn->prepare($query);
-        $stmt->bind_param("ii", $account_id, $specialty_id);
+        $stmt->bind_param("iss", $doctor_id, $apt_date, $apt_time);
         $stmt->execute();
         $result = $stmt->get_result();
 
